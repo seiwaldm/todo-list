@@ -1,11 +1,13 @@
 <template>
   <the-header></the-header>
+  <the-main-section></the-main-section>
 </template>
 
 <script>
 import TheHeader from "./components/TheHeader.vue";
+import TheMainSection from "./components/TheMainSection.vue";
 export default {
-  components: { TheHeader },
+  components: { TheHeader, TheMainSection },
 };
 </script>
 
