@@ -1,6 +1,7 @@
 <template>
   <header class="header bg-success text-white">
     <h1>Item Lister</h1>
+    <input type="text" id="filter" placeholder="Search items..." />
   </header>
 </template>
 
