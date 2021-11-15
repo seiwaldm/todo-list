@@ -5,10 +5,20 @@ export default createStore({
     list: [{ name: "Cafe" }, { name: "Bier" }, { name: "Leberkas" }]
   },
   mutations: {
-    deleteItem(name) {
-      this.state.list = this.state.list.filter(item => item.name !== name);
+    deleteItem(state, name) {
+      state.list = state.list.filter(item => item.name !== name);
+    },
+    addItem(state, name) {
+      state.list.push({ name: name });
     }
   },
   actions: {
+    deleteItem(context, name) {
+      console.log(context);
+      context.commit("deleteItem", name);
+    },
+    addItem(context, name) {
+      context.commit("addItem", name);
+    }
   }
 })

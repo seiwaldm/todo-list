@@ -6,7 +6,6 @@
       v-for="item in list"
       :key="item.name"
       :name="item.name"
-      @deleteItem="deleteItem"
     ></single-item>
   </ul>
 </template>
@@ -27,10 +26,7 @@ export default {
   },
   methods: {
     addItem() {
-      this.list.push({ name: this.newItem });
-    },
-    deleteItem(name) {
-      this.list = this.list.filter((item) => item.name !== name);
+      this.$store.dispatch("addItem", this.newItem);
     },
   },
 };

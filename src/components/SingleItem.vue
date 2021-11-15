@@ -12,7 +12,7 @@ export default {
   props: ["name"],
   methods: {
     deleteItem() {
-      this.$emit("deleteItem", this.name);
+      this.$store.dispatch("deleteItem", this.name);
     },
   },
 };
