@@ -1,12 +1,15 @@
 <template>
   <header class="header bg-success text-white">
     <h1>Item Lister</h1>
-    <input type="text" id="filter" placeholder="Search items..." />
+    <the-filter></the-filter>
   </header>
 </template>
 
 <script>
-export default {};
+import TheFilter from "./TheFilter.vue";
+export default {
+  components: { TheFilter },
+};
 </script>
 
 <style scoped>

@@ -2,7 +2,8 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    list: [{ name: "Cafe" }, { name: "Bier" }, { name: "Leberkas" }]
+    list: [{ name: "Cafe" }, { name: "Bier" }, { name: "Leberkas" }],
+    filter: ""
   },
   mutations: {
     deleteItem(state, name) {
@@ -10,6 +11,9 @@ export default createStore({
     },
     addItem(state, name) {
       state.list.push({ name: name });
+    },
+    updateFilter(state, newFilter) {
+      state.filter = newFilter;
     }
   },
   actions: {
@@ -19,6 +23,11 @@ export default createStore({
     },
     addItem(context, name) {
       context.commit("addItem", name);
+    },
+    updateFilter(context, newFilter) {
+      console.log(newFilter);
+      context.commit("updateFilter", newFilter);
     }
+
   }
 })
